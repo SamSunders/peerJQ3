@@ -5,17 +5,19 @@ var apikey = 'd45b7e7fdaaba16377b27ad541b918a2027822a3'; // Put your API key her
 function searchCallback(results) {
     console.log(results);
     for(var i = 0; i< results.length; i++){
+
     	$(".gameResults").append("<div class='game thumbnail'></div>");
     	var el = $('.game').last();
-    	el.append("<img src=" + results[i].image.icon_url + ">");
-    	el.append("<p>Title: " + results[i].name + "</p>");
-    	el.append("<p id = 'hidden'>Description: " + results[i].description + "</p>");
-    	el.append("<p id = 'hidden'>Release Date: " + results[i].original_release_date + "</p>");
-    	for(var j = 0; j < results[i].platforms.length; j++){
-    		
-			el.append("<p id = 'hidden'>Platform: " + results[i].platforms[j].name + "</p>");
+    	el.append("<img class='icon' src=" + results[i].image.icon_url + ">");
+    	el.append("<h1 class = 'nameText'>" + results[i].name + "</h1>");
+    	el.append("<h3 class = 'makeHide gameTop'>Release Date: " + results[i].original_release_date + "</h3>");
+    	el.append("<h3 class = 'makeHide'>Platforms: </h3");
+
+    	for(var j = 0; j < results[i].platforms.length; j++){   		
+			el.append("<h6 class = 'makeHide'>" + results[i].platforms[j].name + "</h6>");
 			console.log(results[i].platforms[j].name);
 		}
+		el.append("<h3 class = 'makeHide'>Description: " + results[i].description + "</h3>");
     }
 }
 
@@ -28,6 +30,7 @@ $(document).ready(function() {
 		event.preventDefault();
 		// event.preventDefault;
 		var userSearch = $("#testing :input").val();
+		$('.gameResults').children().remove();
 		//console.log(userSearch);
 		search(userSearch);
 		// for(var i = 0; i < results.length; i++){
