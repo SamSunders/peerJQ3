@@ -1,0 +1,40 @@
+html {
+	background-color: #aaa;
+}
+
+body {
+	background-color: #aaa;
+}
+
+.jumbotron {
+	height: 240px;
+	background-image: url("nintendo.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+
+}
+
+#testing {
+	color: #FFF;
+	margin-top: -20px;
+	background: rgb(0, 0, 0); /* Fall-back for browsers that don't
+                                    support rgba */
+    background: rgba(0, 0, 0, .5);
+
+	padding: 20px;
+}
+
+.searchButton {
+	color: #000;
+	margin-left: 5px;
+}
+
+.game1 {
+	margin-top: 155px;
+	background-color: #000;
+	color: #fff;
+
+
+
+}
